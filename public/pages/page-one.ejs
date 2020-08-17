@@ -5,9 +5,10 @@
     <title>page 1</title>
 </head>
 <body>
-    <h4 class="prize-details"><%if(data){%>
-        <% data.forEach(doc => {%>
-            <%=doc.data()['number']%>
-        <%});%></h4>
+    <h4 class="prize-details"<% if(data){%>
+        <% if(data[0]){%>
+            <%= data[0]['quiz']['number']%>
+        <%}%>
+        <%}%></h4>
   </body>
 </html>

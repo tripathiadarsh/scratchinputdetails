@@ -22,35 +22,17 @@
             </div>
        
             <div class="form-group">
-              <button type="submit" id="btnsubmit" value="Submit" class="btn btn-block btn-primary py-3">Submit</button>
+                <button type="submit" class="btn btn-small btn-primary" id="btnsubmit" onclick=submitData()>submit</button>
             </div>
 
         </div>
     </div>
-    </form>
-   
     <script>
-        $("#btnsubmit").on('click', function(e){
-          e.preventDefault();
-          try {
-          var number = $("#number").val();
-        //   var givenNumber = "23456";
-          
-          var t = {};
-          t['number'] = number;
-              $.ajax({
-                  method : "POST",
-                  url : '/validate',
-                  data: t,
-                  success: function(res) {
-                      console.log(res);
-                      $('input[type="number"]').val('');
-                  }
-              });
-          } catch (e) {
-
-          }
-        })
+        function submitData() {
+            var number = document.getElementById("number").value;
+            console.log(number);
+            window.open("http://localhost:2000/?validate?number="+number)
+        }
     </script>
 </body>
 </html>

@@ -29,26 +29,43 @@
           })
     });
 
-    app.post('/validate', (req,response)=>{
-        var inputNumber = req.body.number;
+    app.get('/validate', (req,response)=>{
+        var number = req.query.number;
+        var json = req.query.json || 0;
         var outputList = [];
-            db.collection('number').where('cardDetail', '==', inputNumber).get().then(snapshot => {
+        var promise = new Promise((resolve, reject) => {
+            return db.collection('cardDetail').where('number', '==', number).get().then(snapshot => {
                 if (snapshot.empty) {
-                    response.send('No matching documents.');
-                }else{
-                    // console.log(snapshot);
-                    response.render('page', {
-                    data: snapshot
-                 });
-                }   
+                    console.log('No matching documents.');
+                }
+                snapshot.forEach(doc => {
+                    let item = {};
+                    item['id'] = doc.id;
+                    item['quiz'] = doc.data();
+                    outputList.push(item);
+                });
+                resolve(outputList);
             }).catch(err => {
-                console.log(err);
+                reject(err);
             });
+        });
+
+        promise.then(() => {
+            if (json == 1) {
+                response.send({
+                    data: outputList
+                })
+            } else {
+                response.render('pages/pages-one', {
+                    data: outputList
+                });
+            }
+        });
 
     });
-    app.post('/page-one', function(req, res) {
-        res.render('pages/pages-one.ejs');
-    });
+    // app.post('/page-one', function(req, res) {
+    //     res.render('pages/pages-one.ejs');
+    // });
 
     app.get('/', function(req, res) {
         res.render('index.ejs');
