@@ -2,10 +2,7 @@
     'use strict';
     const express = require('express');
     const app = express();
-    var fs = require('fs');
-    const Fingerprint = require('express-fingerprint');
     const bodyParser = require('body-parser');
-    var request = require('request');
     app.engine('html', require('ejs').renderFile);
     app.set('views', __dirname + '/public');
     app.set('view engine', 'ejs');
@@ -27,7 +24,8 @@
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
             "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-o5w3u%40scratch-card-7cde2.iam.gserviceaccount.com"
           })
-    });
+    }); 
+    const db = admin.firestore();
 
     app.get('/validate', (req,response)=>{
         var number = req.query.number;
@@ -41,7 +39,7 @@
                 snapshot.forEach(doc => {
                     let item = {};
                     item['id'] = doc.id;
-                    item['quiz'] = doc.data();
+                    item['info'] = doc.data();
                     outputList.push(item);
                 });
                 resolve(outputList);
@@ -56,16 +54,17 @@
                     data: outputList
                 })
             } else {
-                response.render('pages/pages-one', {
+                response.render('details-want', {
                     data: outputList
                 });
             }
         });
 
     });
-    // app.post('/page-one', function(req, res) {
-    //     res.render('pages/pages-one.ejs');
-    // });
+
+    app.post('/page-one', function(req, res) {
+        res.render('pages/pages-one.ejs');
+    });
 
     app.get('/', function(req, res) {
         res.render('index.ejs');

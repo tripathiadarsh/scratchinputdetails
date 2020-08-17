@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 2</title>
+</head>
+<body>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>page 1</title>
+        </head>
+        <body>
+            <% if(data){%>
+                <% if(data[0]){%>
+            <h4 class="prize-details">
+                    <%=data[0]['info']['Name']%>
+            </h4>
+            <p class="section__title mt-1">
+                    <%=data[0]['info']['Prize amount']%>
+            </p>
+            <h4 class="prize-details">
+                <%=data[0]['info']['Account holder name']%>
+            </h4>
+            <h2 class="section__winner-details">
+                        <%= data[0]['info']['Account Number']%>    
+            </h2>
+            <h3 class="section__title mt-1">
+                    <%=data[0]['info']['Address']%>
+               </h3>
+            <p>
+                    <%=data[0]['info']['ifsc code']%> 
+            </p>
+            <%}%>
+            <%}%>
+        </body>
+        </html>
+    
+</body>
+</html>
