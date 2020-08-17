@@ -56,24 +56,21 @@
                     data: outputList
                 })
             } else {
-                response.render('pages/pages-one', {
+                response.render('user-detail', {
                     data: outputList
                 });
             }
         });
 
     });
-    // app.post('/page-one', function(req, res) {
-    //     res.render('pages/pages-one.ejs');
-    // });
+    app.post('/page-one', function(req, res) {
+        res.render('pages/pages-one.ejs');
+    });
 
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
   
-
-
-   
 // port routing start
 const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
