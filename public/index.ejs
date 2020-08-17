@@ -22,16 +22,18 @@
             </div>
        
             <div class="form-group">
-                <button type="submit" class="btn btn-small btn-primary" id="btnsubmit" onclick=submitData()>submit</button>
+              <button type="submit" id="btnsubmit" value="Submit" class="btn btn-block btn-primary py-3" onclick=submitData()>Submit</button>
             </div>
 
         </div>
     </div>
+    </form>
+   
     <script>
         function submitData() {
             var number = document.getElementById("number").value;
             console.log(number);
-            window.open("http://localhost:2000/?validate?number="+number)
+            window.open("http://localhost:2000/validate?number="+number)
         }
     </script>
 </body>
