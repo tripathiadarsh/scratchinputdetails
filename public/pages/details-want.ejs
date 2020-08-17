@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 2</title>
+</head>
+<body>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>page 1</title>
+        </head>
+        <body>
+            <h4 class="prize-details"><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['title']%>
+                <%});%></h4>
+            <img url="<%= data.scratch['imageUrl']%>" alt="">
+            <p class="section__title mt-1"><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['name']%>
+                <%});%>
+            <%}%></p>
+            <img url="<%= data.scratchsponsar['imageUrl']%>" alt="">
+            <h2 class="section__winner-details"><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['number']%>
+                <%});%>
+            <%}%></h2>
+            <h3 class="section__title mt-1"><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['address']%>
+                <%});%>
+            <%}%></h3>
+        
+            <p><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['holder-name']%>
+                <%});%>
+            <%}%></p>
+            <p><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['account-number']%>
+                <%});%>
+            <%}%></p>
+            <p><%if(data){%>
+                <% data.forEach(doc => {%>
+                    <%=doc.data()['ifsc-number']%>
+                <%});%>
+            <%}%></p>
+        </body>
+        </html>
+    
+</body>
+</html>
