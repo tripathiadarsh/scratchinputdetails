@@ -54,14 +54,21 @@
                     data: outputList
                 })
             } else {
+<<<<<<< HEAD
+                response.render('user-detail', {
+=======
                 response.render('details-want', {
+>>>>>>> 9d62304d1d780f2cc980f07becb368855840eb91
                     data: outputList
                 });
             }
         });
 
     });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9d62304d1d780f2cc980f07becb368855840eb91
     app.post('/page-one', function(req, res) {
         res.render('pages/pages-one.ejs');
     });
@@ -70,9 +77,6 @@
         res.render('index.ejs');
     });
   
-
-
-   
 // port routing start
 const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
