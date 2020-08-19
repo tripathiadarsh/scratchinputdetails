@@ -34,7 +34,7 @@
         var promise = new Promise((resolve, reject) => {
             return db.collection('cardDetail').where('number', '==', number).get().then(snapshot => {
                 if (snapshot.empty) {
-                    response.send('No matching results found.');
+                    console.log('No matching results found.');
                 }
                 snapshot.forEach(doc => {
                     let item = {};
