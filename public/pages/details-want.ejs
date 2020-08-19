@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 2</title>
+</head>
+<body>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>page 1</title>
+            <!-- <meta property="og:url" content="http://localhost:2000/?uid=<%=data[0]['info']['ID']%> " /> -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        </head>
+        <body>
+              <% if(data){%>
+                <% if(data[0]){%>
+                    <div class="container">
+                        <div class="row">
+                            <ul class="list-group">
+             <img class="img-fluid" src="<%=data[0]['info']['imageUrl'] %>" alt="prize-details image">
+             <ul class="list-group">
+                <li class="list-group-item">
+                    <%=data[0]['info']['ID']%> 
+                     </li>
+             <li class="list-group-item">
+                        <%= data[0]['info']['Account Number']%>    
+             </li>
+             <li class="list-group-item">
+                <%=data[0]['info']['Account holder name']%>
+             </li>
+             <li class="list-group-item">
+                <%=data[0]['info']['Address']%>
+             </li>
+             <li class="list-group-item">
+            <%=data[0]['info']['Date']%> 
+             </li>
+             <li class="list-group-item">
+             <%=data[0]['info']['Name']%>
+             </li>
+             <li class="list-group-item">
+              <%=data[0]['info']['Prize amount']%>
+             </li>
+             <li class="list-group-item">
+           <%=data[0]['info']['Status ']%> 
+             </li>
+             <li class="list-group-item">
+           <%=data[0]['info']['ifsc code']%> 
+             </li>
+             <li class="list-group-item">
+             <%=data[0]['info']['number']%> 
+             </li>
+             <%}%>
+            <%}%>
+    </ul>
+    </div>
+    </div>
+        </body>
+        </html>
+    
+</body>
+</html>

@@ -34,7 +34,7 @@
         var promise = new Promise((resolve, reject) => {
             return db.collection('cardDetail').where('number', '==', number).get().then(snapshot => {
                 if (snapshot.empty) {
-                    response.send('No matching results found.');
+                    response.render ('pages/404');
                 }
                 snapshot.forEach(doc => {
                     let item = {};
@@ -54,29 +54,62 @@
                     data: outputList
                 })
             } else {
-<<<<<<< HEAD
-                response.render('user-detail', {
-=======
-                response.render('details-want', {
->>>>>>> 9d62304d1d780f2cc980f07becb368855840eb91
+                response.render('pages/user-details', {
                     data: outputList
                 });
             }
+            
         });
 
     });
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d62304d1d780f2cc980f07becb368855840eb91
     app.post('/page-one', function(req, res) {
         res.render('pages/pages-one.ejs');
     });
+ 
+// other page routing
+app.get('/product', function(req, res) {
+    res.render('pages/product.ejs');
+});
+app.get('/prize', function(req, res) {
+    res.render('pages/prize.ejs');
+});
+app.get('/how-to-win', function(req, res) {
+    res.render('pages/how-to-win.ejs');
+});
+app.get('/winner-list', function(req, res) {
+    res.render('pages/winner-list.ejs');
+});
+app.get('/check-status', function(req, res) {
+    res.render('pages/check-status.ejs');
+});
+app.get('/terms-and-conditions', function(req, res) {
+    res.render('pages/terms-and-conditions.ejs');
+});
+app.get('/signin', function(req, res) {
+    res.render('pages/signin.ejs');
+});
+app.get('/contact', function(req, res) {
+    res.render('pages/contact.ejs');
+});
 
+app.get('/winner-cash', function(req, res) {
+    res.render('pages/winner-cash.ejs');
+});
+app.get('/final-prize', function(req, res) {
+    res.render('pages/final-prize.ejs');
+});
+app.get('/scratch', function(req, res) {
+    res.render('pages/scratch.ejs');
+});
+// other page routing
+
+// index page routing
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
+  // index page routings
   
+
 // port routing start
 const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {

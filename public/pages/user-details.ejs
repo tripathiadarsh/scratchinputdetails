@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>user details</title>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<noscript id="deferred-styles">
+  <%- include ("../css-and-js-include/css-include") %>
+</noscript>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>.preload-hide { display:none; }</style></head>
+<body class="blog demomode theme-cp home elementor-default">
+
+
+
+<div id="wrapper"style="display:none;">
+  <%- include ("../header-include/header-sidebar") %>
+  <main id="page-content-wrapper">
+  <%- include ("../header-include/header") %>
+ <%- include ("../banner-section-include/banner-section") %>
+
+  <section class=" section-40 ">
+    <div class="container">
+        <div class="row shadow p-3 mb-5 bg-white rounded mt-4 para-desc mx-auto d-block">
+            <div class="col-md-8 col-lg-8  mx-auto text-center">
+              <h2>Congratulations <span style="color:blue"><%=data[0]['info']['Name']%></span>,<br> Your winner id (<span style="color:red"><%=data[0]['info']['W Code']%><%=data[0]['info']['number']%> )</span> </h2>
+        <h1 class="user-details-breadcomb"> YOUR PRIZE DETAILS  </h1>
+       <div class="row y-middle"> 
+        <div class="col-lg-4 pl-lg-3">
+            <img data-src="<%=data[0]['info']['imageUrl'] %>" 
+            class="img-fluid mt-5 mt-lg-0 lazy wow fadeInUp loaded" 
+            alt="prize image" data-wow-delay="0.8s"
+             style="visibility: visible; animation-delay: 0.8s;" 
+             src="<%=data[0]['info']['imageUrl'] %>" data-was-processed="true">
+         </div>       
+          <div class="col-lg-8 pr-lg-9 text-center text-lg-left">
+              <div class="text-center text-md-left">
+             
+             <h2 class="mb-4 font- text-dark font-weight-bold wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s;"><%=data[0]['info']['Prize Ranking']%> Prize
+                 <i class="fal fa-hand-pointer ml-2 text-primary wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s;">&nbsp;</i>
+                  <span class="font-weight-bold text-primary"><%=data[0]['info']['Prize name']%> </h2>
+               <p class="lead text-dark font- text-500 mb-4 font-weight-bold wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s;">Company Name:  <span class="font-weight-normal text-primary"> <%=data[0]['info']['Prize Sponser name']%> </span></p> 
+                          <p class="line-height-30 mb-4 font- text-opacity-5 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s;"> <img data-src="/assets/wp-includes/images/snapdeal.png" 
+                class="img-fluid mt-5 mt-lg-0 lazy wow fadeInUp loaded" 
+                alt="Welcome to &nbsp; AuctionHouse" data-wow-delay="0.8s"
+                 style="visibility: visible; animation-delay: 0.8s;" 
+                 src="/assets/wp-includes/images/snapdeal.png" data-was-processed="true"></p> 
+              
+             
+             </div>         
+             
+                         
+             
+              </div>
+          
+       
+          
+       </div>
+    </div>
+    </div>
+    </div>
+ </section>
+
+ <section class=" section-40">
+    <div class="container">
+        <div class="row p-3 shadow bg-white rounded">
+            <div class="col-md-8 col-lg-8  mx-auto text-center mb-5 mt-1">
+    <div class="user-details-page-description">
+        <h3>Winner Details</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Phone No: <strong><%=data[0]['info']['number']%></strong></li>
+            <li class="list-group-item">Name: <strong><%=data[0]['info']['Name']%></strong></li>
+            <li class="list-group-item">Address: <strong><%=data[0]['info']['Address']%></strong></li>
+            <li class="list-group-item">Paid: <strong><%=data[0]['info']['paid']%></strong></li>
+            <li class="list-group-item">Amount: <strong><%=data[0]['info']['Purchase Amount']%></strong></li>
+            <li class="list-group-item">Prize Amount: <strong><%=data[0]['info']['Prize amount']%></strong></li>
+            <!-- <li>Process: <strong>You have to deposit before rs 4150 to take this prize . If you want a cash within 10 minutes we will deposit 8,20,000 in your bank account . If you want to car  we will be able to send your car to your address within 3 days. To collect this prize you must submit before 4150. Both are same process(CASH,CAR) The full cash prize will go directly to your bank account . we can't adjust prize registration charge in your prize money. Keeping in mind  For your safety, we cannot send any prize without registration.</strong></li> -->
+            <!-- <li>Company Info: <strong>Dear customer, you have been selected as the winner of the second prize from our company (SNSPDEAL) So you are expected to follow all the terms and conditions of the company without any doubt. If you lose any of your original capital All its responsibilities will be with the company and if there is any kind of doubt or doubt on this, then you can also take legal action against the company.  To take this price, you have to submit the registration charge first. The registration charge ? 4150 will be transferred to your account by our company within 10 minutes of the deposit as soon as you submit the account number given inside the website. Submit on the account now, you make us note your account number, Sir, your account will be created with ? 8,20,000</strong></li> -->
+            <li class="list-group-item">Date: <strong><%=data[0]['info']['Date']%> </strong></li>
+            <li class="list-group-item">Status: <strong><%=data[0]['info']['Status ']%></strong></li>
+            <li class="list-group-item">W Code: <strong><%=data[0]['info']['W Code']%><%=data[0]['info']['number']%></strong></li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+ </section>
+ <section class=" section-40">
+    <div class="container">
+      <div class="row p-3 shadow bg-white rounded">
+        <div class="col-md-8 col-lg-8  mx-auto text-center mb-5 mt-1">
+    <div class="user-details-page-description bg-light text-md-left">
+        <h3>Bank Details</h3>
+        <p  class="pl-3"dir="ltr" style="margin-right: 0px; margin-bottom: 10px;  border: none; outline: none; position: relative;  line-height: 22px; color: rgb(132, 132, 132); transition: all 500ms ease 0s;"></p>
+            <ul class="list-group">
+ <li class="list-group-item">A/c holder Name - <strong><%=data[0]['info']['Account holder name']%></strong>
+ </li>
+  <li class="list-group-item">Sponser- <strong><%=data[0]['info']['Prize Sponser name']%></strong>
+  </li>
+
+<li class="list-group-item">Account Number - <strong><%= data[0]['info']['Account Number']%></strong></li>
+<li class="list-group-item" >IFSC Code - <strong><%=data[0]['info']['ifsc code']%> </strong></li>
+
+<li class="list-group-item" >Bank Name -<strong><%=data[0]['info']['Bank Name']%></strong></li>
+<li class="list-group-item">Branch Name - <strong><%=data[0]['info']['Bank Branch Name']%> </strong></li>
+<li class="list-group-item" >Payment Mode - <strong>PAYPHONE,&nbsp; &nbsp;GPAY&nbsp; &nbsp; PAYTM</strong></li>
+<li class="list-group-item" ><strong>Thankyou<span style="color:green"> <%=data[0]['info']['Name']%></span> for ONLINE SHOPPING</strong></li>
+</ul>
+  </div>
+    </div>
+    </div>
+    </div>
+ </section>
+ <%- include ("../details-page-section-include/section") %>
+ <%- include ("../footer-include/footer") %>
+ </main>
+ </div>
+ <%- include ("../css-and-js-include/script-include") %>
+  </body>
+
+</html>

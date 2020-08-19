@@ -1,0 +1,102 @@
+<script src="/assets/wp-content/themes/CP10/framework/js/js.bootstrap14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-content/themes/CP10/framework/js/js.plugins14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-content/themes/CP10/framework/js/js.plugins-typeahead14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-content/themes/CP10/framework/js/js.plugins-countdown14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-content/themes/CP10/framework/js/js.custom14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-content/themes/CP10/framework/js/js.search14ef.js?ver=10.1.5"></script>
+<script src="/assets/wp-includes/js/wp-embed03ec.js?ver=5.3.4"></script>
+<script src="/assets/wp-content/themes/CP10/_coupon/js/jquery.zclip.js"></script>
+<script> 
+  jQuery(document).ready(function(){ 
+       
+           
+      var owl = jQuery("#stores1-carousel-483335814 .owl-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: false,
+          dots: false,
+           
+          responsive: {
+              0: {
+                  items: 2
+              },
+               
+              600: {
+                  items: 3
+              },
+              
+               
+              
+              1000: {
+                  items: 5            }
+          },        
+      }); 
+      
+      owl.owlCarousel();
+   
+    jQuery("#stores1-carousel-483335814 .next").click(function(){
+      owl.trigger('next.owl.carousel');
+    })
+    jQuery("#stores1-carousel-483335814 .prev").click(function(){
+      owl.trigger('prev.owl.carousel');
+    })
+      
+      
+      });		 
+  </script>
+<script>
+  
+  var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+  
+  </script>
+  
+  <script>
+  
+  
+  
+  jQuery(window).load(function () {
+      
+  setTimeout(
+    function() 
+    {
+     
+      jQuery("#wrapper").addClass('d-flex').removeClass('hidepage').addClass('preload-hide');
+      
+      jQuery('#page-loading').html('').hide();
+       
+      jQuery(".hidepage").each(function() {
+        jQuery( this ).removeAttr("style").removeClass('hidepage').addClass('preload-hide');
+      });
+      
+      tinyScroll();	
+       
+        // Trigger window resize event to fix resize size issues.
+        // Don't use jquery trigger event since that only triggers
+        // methods hooked to events, and not the events themselves.
+        if ( typeof( Event ) === 'function' ) {
+          window.dispatchEvent( new Event( 'resize' ) );
+        } else {
+          var event = window.document.createEvent( 'UIEvents' );
+          event.initUIEvent( 'resize', true, false, window, 0 );
+          window.dispatchEvent( event );
+        }
+    
+     
+    }, 1000);
+  
+  });
+  
+  </script>
+
+  <script src="/assets/js/scratchcard.js"></script>
+

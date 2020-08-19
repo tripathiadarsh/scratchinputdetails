@@ -1,0 +1,55 @@
+<section class="hero-text1 position-relative hero-default hero-small text-light ">
+    <div class="bg-image" data-bg="https://www.onlineshopwinner.com/images/mid-banner.jpg"></div>
+  
+    <div class="hero_content z-10">
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="caption">
+
+                <div class="title mb-4 font- text-white font-weight-bold textsize-xxl">Shopping Winner  <span class="font-weight-bold text-uppercase">Online</span></div>
+                
+                 <h4 id="demo"></h4> 
+
+              </div>
+        </div>
+      </div>
+    </div>
+    <script>
+  
+  jQuery(document).ready(function(){ 
+  
+      console.log('loaded full page hero');
+  
+      jQuery('.elementor_header').addClass('fixed-top bg-transparent').removeClass('bg-dark').addClass('bg-white');
+      
+          jQuery('.elementor_mainmenu').removeClass('navbar-light').addClass('navbar-dark');
+          
+      jQuery('.elementor_topmenu').addClass('fade');
+      
+      
+      jQuery('.header2 .elementor_submenu, .header12 .elementor_submenu').attr('style','display: none !important');
+   
+  
+  });
+   
+  
+  jQuery(window).on('load', function(){
+   
+      jQuery(window).on('scroll', function() {
+          if(jQuery(this).scrollTop() > 150) {
+          
+              jQuery('.elementor_header').removeClass('bg-transparent');
+              jQuery('.elementor_mainmenu').addClass('navbar-light').removeClass('navbar-dark');
+              
+          } else {
+          
+              jQuery('.elementor_header').addClass('bg-transparent');
+                          jQuery('.elementor_mainmenu').removeClass('navbar-light').addClass('navbar-dark');
+                          
+          }
+      }); 
+  
+  });
+  
+  </script>
+  </section>
