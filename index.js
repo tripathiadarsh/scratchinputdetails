@@ -111,7 +111,7 @@ app.get('/scratch', function(req, res) {
   
 
 // port routing start
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
 console.log(`App listening on port ${PORT}`);
 console.log('Press Ctrl+C to quit.')
